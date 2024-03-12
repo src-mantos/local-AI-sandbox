@@ -1,0 +1,46 @@
+//Main reference: https://containers.dev/implementors/json_reference/
+{
+  "name": "Local AI Sandbox",
+  "dockerFile": "Dockerfile",
+  "extensions": [
+    "ms-python.python",
+    "ms-azuretools.vscode-docker"
+  ],
+  
+  "settings": {
+    "python.pythonPath": "/usr/local/bin/python",
+    "terminal.integrated.shell.linux": "/bin/bash"
+  }
+
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/python:1":{},
+    "ghcr.io/devcontainers/features/git:1":{},
+    //https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials
+	  "ghcr.io/devcontainers-contrib/features/pylint:2": {},
+	  "ghcr.io/devcontainers-contrib/features/yamllint:2": {}
+  }
+  
+// Use 'forwardPorts' to make a list of ports inside the container available locally.
+// "forwardPorts": [],
+
+// Use 'postCreateCommand' to run commands after the container is created.
+//"postCreateCommand": "pip install --user -r requirements.txt",
+
+// Configure tool-specific properties.
+"customizations": {
+  // Configure properties specific to VS Code.
+  "vscode": {
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+      "streetsidesoftware.code-spell-checker",
+      // "SonarSource.sonarlint-vscode"
+    ]
+  }
+}
+
+// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+// "remoteUser": "root"
+}
+
